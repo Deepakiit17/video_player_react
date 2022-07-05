@@ -21,17 +21,13 @@ function Sidebar() {
   const videoPlayer = useRef();
 
   const [users, setUser] = useState([]);
-  
-    const [videourl, setVideoUrl] = useState();
-  
+
+  const [videourl, setVideoUrl] = useState();
+
   useEffect(() => {
     fetch("http://localhost:3333/videos")
-    .then(res=>res.json())
-    .then(res=> setUser(res))
-        
-    
-      
-    
+      .then((res) => res.json())
+      .then((res) => setUser(res));
   }, []);
 
   console.log(users);
@@ -77,9 +73,6 @@ function Sidebar() {
       width: "3rem",
     },
   };
-
-  
- 
 
   return (
     <div className="App">
@@ -141,38 +134,47 @@ function Sidebar() {
           {/* groups */}
           <div className="groups">
             {/* group 1 */}
-            <div className="group" onClick={play}>
+            <div className="group">
               <h3
                 animate={{ opacity: open ? 1 : 0, height: open ? "auto" : 0 }}
               >
                 ANALYTICS
               </h3>
               <Item icon={<DashboardRounded />} name="Dashboard" />
-              <Item icon={<BarChartRounded />} name="Performance" />
+              {users.map((item, i) => (
+                <tr key={i}>
+                  <h1>{item.Topic}</h1>
+
+                  <button onClick={() => setVideoUrl(item.url)}>
+                    {item.Name}
+                  </button>
+                </tr>
+              ))}
+              {/* <Item icon={<BarChartRounded />} name="Performance" /> */}
             </div>
           </div>
           {/* group 2 */}
-          <div className="group">
+          {/* <div className="group">
             <h3 animate={{ opacity: open ? 1 : 0, height: open ? "auto" : 0 }}>
               Content
             </h3>
             <Item icon={<AttachMoneyRounded />} name="Sales" />
             <Item icon={<AssignmentTurnedInRounded />} name="Checklist" />{" "}
             <Item icon={<AccountCircleRounded />} name="Customers" />
-          </div>
+          </div> */}
           {/* group 3 */}
-          <div className="group">
+          {/* <div className="group">
             <h3 animate={{ opacity: open ? 1 : 0, height: open ? "auto" : 0 }}>
               CUSTOMIZATION
             </h3>
             <Item icon={<SettingsRemoteRounded />} name="Segments" />
             <Item icon={<ColorLensRounded />} name="Themems" />
-          </div>
+          </div> */}
         </div>
       </div>
 
       <div className="body_container">
-        <h1>Get API Call </h1>
+        {/* <h1>Get API Call </h1>
         <table border="1">
           <tbody>
             <tr>
@@ -180,8 +182,8 @@ function Sidebar() {
               <td>Topic</td>
               <td>Name</td>
               <td>Url</td>
-            </tr>
-            {users.map((item, i) => (
+            </tr> */}
+        {/* {users.map((item, i) => (
               <tr key={i}>
                 <td>{item.chapter}</td>
                 <td>{item.Topic}</td>
@@ -194,10 +196,10 @@ function Sidebar() {
                 </td>
               </tr>
             )
-            )}
-          </tbody>
-        </table>
-        <Player url = {videourl}/>
+            )} */}
+        {/* </tbody>
+        </table> */}
+        <Player url={videourl} />
         {/* <hr />i am body
         <hr />i am body
         <hr />i am body

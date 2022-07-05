@@ -2,22 +2,22 @@
     "videos": [
         {
             "Topic": 1,
-            "Name": "Challenge 1",
+            "Name": "Tutorial 1",
             "url": "https://www.youtube.com/watch?v=wWyyl6MhZLM"
         },
         {
             "Topic": 2,
-            "Name": "Challenge 2",
+            "Name": "Tutorial 2",
             "url": "https://www.youtube.com/watch?v=aJgAwjP20RY"
         },
         {
             "Topic": 3,
-            "Name": "Challenge 3",
+            "Name": "Tutorial 3",
             "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
         },
         {
             "Topic": 4,
-            "Name": "Challenge 4",
+            "Name": "Tutorial 4",
             "url": "https://www.youtube.com/watch?v=aJgAwjP20RY"
         }
     ]
